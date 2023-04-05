@@ -1,9 +1,7 @@
-from load import read_file
 import main_data
 
 
 def login():
-    read_file("user")
     data_user = main_data.data_csv_user
     username = input("masukkan username ")
     password = input("masukkan password ")

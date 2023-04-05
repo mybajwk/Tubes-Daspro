@@ -1,6 +1,8 @@
 from login import login
 from load import read_file
 from game import game
+from help import command_help
+from function.exit import exit
 import main_data
 import argparse
 import os
@@ -27,12 +29,16 @@ while not (main_data.stop_program):
     if not (main_data.is_login):
         match comand:
             case "HELP":
-                help(main_data.current_role)
+                command_help(main_data.current_role)
             case "login":
                 while not (main_data.is_login):
                     main_data.current_user, main_data.current_role, main_data.is_login = login()
             case "load":
                 file_name = input("nama file ")
                 read_file(file_name)
+            case "exit":
+                # main_data.stop_program = True
+                exit()
+
     if (main_data.is_login):
         game()
