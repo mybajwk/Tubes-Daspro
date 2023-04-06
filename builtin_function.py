@@ -17,3 +17,7 @@ def push_back_data(old_data, new_data):
     data_result[idx-1] = new_data
 
     return data_result
+
+
+# tambahan fitur bonus
+# def random():

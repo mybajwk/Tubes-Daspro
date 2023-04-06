@@ -1,6 +1,7 @@
 import main_data
 from help import command_help
 from function.summon_jin import summon_jin
+from function.ubah_tipe_jin import ubah_tipe_jin
 
 
 def notvalid():
@@ -31,7 +32,7 @@ def game():
                     unauthorized()
             case "Ubah Tipe Jin":
                 if (current_role == "bandung_bondowoso"):
-                    command_help(current_role)
+                    ubah_tipe_jin()
                 else:
                     unauthorized()
             case "Bangun":
