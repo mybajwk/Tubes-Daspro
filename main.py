@@ -3,6 +3,8 @@ from load import read_file
 from game import game
 from help import command_help
 from function.exit import exit
+from builtin_function import notvalid
+from load import read_file
 import main_data
 import argparse
 import os
@@ -17,28 +19,32 @@ if folder_name == None:
     print("tidak ada input")
     main_data.stop_program = True
 elif os.path.isdir(folder_name):
+    # load data dan save ke variabel global
     print("loading...")
     main_data.folder = folder_name
+    read_file()
 else:
     print("not found")
     main_data.stop_program = True
+
 
 # main program
 while not (main_data.stop_program):
     comand = input("masukkan input ")
     if not (main_data.is_login):
-        match comand:
-            case "HELP":
-                command_help(main_data.current_role)
-            case "login":
-                while not (main_data.is_login):
-                    main_data.current_user, main_data.current_role, main_data.is_login = login()
-            case "load":
-                file_name = input("nama file ")
-                read_file(file_name)
-            case "exit":
-                # main_data.stop_program = True
-                exit()
+        if comand == "HELP":
+            command_help(main_data.current_role)
+        elif comand == "Login":
+            while not (main_data.is_login):
+                main_data.current_user, main_data.current_role, main_data.is_login = login()
+        elif comand == "exit":
+            exit()
+        elif comand == "Logout":
+            print("Logout gagal!")
+            print(
+                "Anda belum login, silahkan login terlebih dahulu sebelum melakukan logout")
+        else:
+            notvalid()
 
     if (main_data.is_login):
         game()

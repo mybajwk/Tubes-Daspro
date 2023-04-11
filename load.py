@@ -4,16 +4,16 @@ from builtin_function import csv_reader
 #  read csv ()
 
 
-def read_file(file_name):
-    match file_name:
-        case "user":
-            file = open(main_data.folder+"/"+file_name+".csv", 'r')
-            main_data.data_csv_user = csv_reader(file, ";")
-        case "candi":
-            file = open(main_data.folder+"/"+file_name+".csv", 'r')
-            main_data.data_csv_candi = csv_reader(file, ";")
-        case "bahan_bangunan":
-            file = open(main_data.folder+"/"+file_name+".csv", 'r')
-            main_data.data_csv_bahan = csv_reader(file, ";")
-        case _:
-            print("File tidak ada yang sesuai")
+def read_file():
+    print("load user.csv ....")
+    file = open(main_data.folder+"/user.csv", 'r')
+    main_data.data_csv_user, main_data.user_len = csv_reader(file, ";")
+    print("load candi.csv ....")
+    file = open(main_data.folder+"/candi.csv", 'r')
+    main_data.data_csv_candi, main_data.candi_len = csv_reader(file, ";")
+
+    print("load bahan_bangunan.csv ....")
+    file = open(main_data.folder+"/bahan_bangunan.csv", 'r')
+    main_data.data_csv_bahan, main_data.bahan_len = csv_reader(file, ";")
+
+    print("\nload data sukses... ")

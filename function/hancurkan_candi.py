@@ -1,4 +1,3 @@
-
-def jin_bangun():
+def hancurkan_candi():
     print()
     # buat program disini hapus aja printnya

@@ -1,4 +1,3 @@
-
-def jin_bangun():
+def laporan_jin():
     print()
     # buat program disini hapus aja printnya

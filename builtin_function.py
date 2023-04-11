@@ -1,7 +1,7 @@
 import main_data
 
 
-def len_data(data):
+def len_data(data: str) -> int:
     # pengganti len
     idx = 0
     for i in data:
@@ -9,9 +9,9 @@ def len_data(data):
     return idx
 
 
-def push_back_data(old_data, new_data):
+# push back data untuk string
+def push_back_data(old_data: list, new_data: str, idx: int) -> list:
     # pengganti append
-    idx = len_data(old_data)
     idx += 1
     data_result = [None for k in range(idx)]
     for i in range(idx-1):
@@ -30,8 +30,9 @@ def count_char(text, character):
     return idx
 
 
-def csv_reader(data, delimiter):
+def csv_reader(data: list, delimiter: str) -> tuple[list, int]:
     result = []
+    length_data = 0
     for line in data:
         data_line = []
         last_word = False
@@ -41,14 +42,21 @@ def csv_reader(data, delimiter):
             if character == "\n":
                 last_word = True
             if character == delimiter:
-                data_line = push_back_data(data_line, word)
+                data_line = push_back_data(data_line, word, idx)
                 word = ""
+                idx += 1
             else:
                 if not (last_word):
                     word += character
-            idx += 1
-        data_line = push_back_data(data_line, word)
-        result = push_back_data(result, data_line)
-    return result
-    # tambahan fitur bonus
-    # def random():
+        data_line = push_back_data(data_line, word, idx)
+        result = push_back_data(result, data_line, length_data)
+        length_data += 1
+    return result, length_data
+
+
+def notvalid():
+    print("invalid command")
+
+
+def unauthorized():
+    print("unauthorized command")

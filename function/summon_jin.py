@@ -3,8 +3,9 @@ import builtin_function
 
 
 def cekuser(name):
-    for i in main_data.data_csv_user:
-        if i[0] == name:
+    data = main_data.data_csv_user
+    for i in range(1, main_data.user_len):
+        if data[i][0] == name:
             return False
     return True
 
