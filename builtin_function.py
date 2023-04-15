@@ -20,8 +20,22 @@ def push_back_data(old_data: list, new_data: str, idx: int) -> list:
 
     return data_result
 
+# hapus data list
+
+
+def hapus_data_list(old_data: list, delete_data: str, len: int) -> tuple[list, int]:
+    # pengganti append
+    data_result = [None for k in range(len-1)]
+    for i in range(len):
+        if not (old_data[i][0] == delete_data):
+            data_result[i] = old_data[i]
+
+    return data_result, len-1
+
 
 # push back data untuk list
+
+
 def push_back_data_list(old_data: list, new_data: str, len: int) -> tuple[list, int]:
     # pengganti append
     len += 1
