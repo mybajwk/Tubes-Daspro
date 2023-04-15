@@ -14,5 +14,4 @@ def exit():
             # print("saving")
             save()
             # make function for saving
-
     main_data.stop_program = True

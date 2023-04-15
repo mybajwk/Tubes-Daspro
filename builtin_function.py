@@ -21,6 +21,18 @@ def push_back_data(old_data: list, new_data: str, idx: int) -> list:
     return data_result
 
 
+# push back data untuk list
+def push_back_data(old_data: list, new_data: str, len: int) -> list:
+    # pengganti append
+    len += 1
+    data_result = [None for k in range(len)]
+    for i in range(len-1):
+        data_result[i] = old_data[i]
+    data_result[len-1] = new_data
+
+    return data_result
+
+
 def count_char(text, character):
     # menghitung jumlah char yang dicari dalam suatu kata
     idx = 0
