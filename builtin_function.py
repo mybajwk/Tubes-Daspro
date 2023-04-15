@@ -22,7 +22,7 @@ def push_back_data(old_data: list, new_data: str, idx: int) -> list:
 
 
 # push back data untuk list
-def push_back_data(old_data: list, new_data: str, len: int) -> list:
+def push_back_data_list(old_data: list, new_data: str, len: int) -> tuple[list, int]:
     # pengganti append
     len += 1
     data_result = [None for k in range(len)]
@@ -30,7 +30,7 @@ def push_back_data(old_data: list, new_data: str, len: int) -> list:
         data_result[i] = old_data[i]
     data_result[len-1] = new_data
 
-    return data_result
+    return data_result, len
 
 
 def count_char(text, character):

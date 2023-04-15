@@ -45,7 +45,7 @@ def summon_jin():
     main_data.user_data[2] = role
 
     # insert to array
-    main_data.data_csv_user = builtin_function.push_back_data(
+    main_data.data_csv_user, main_data.user_len = builtin_function.push_back_data_list(
         main_data.data_csv_user, main_data.user_data)
 
     print("Jin {} berhasil dipanggil!".format(username))

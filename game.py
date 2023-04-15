@@ -84,10 +84,7 @@ def game():
             else:
                 unauthorized()
         elif x == "Save":
-            if (current_role == "roro_jonggrang" or current_role == "roro_jonggrang"):
-                save()
-            else:
-                unauthorized()
+            save()
         elif x == "Exit":
             exit()
         elif x == "logout":
