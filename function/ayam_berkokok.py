@@ -1,8 +1,8 @@
-
+from main_data import candi_len 
 
 def ayam_berkokok():
     print("Kukuruyuk.. Kukuruyuk..")
-    jumlah_candi = 
+    jumlah_candi = candi_len
     print("Jumlah Candi: ",jumlah_candi)
     if jumlah_candi >= 100 :
         print("Yah, Bandung Bondowoso memenangkan permainan!")
