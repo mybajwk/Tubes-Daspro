@@ -6,7 +6,7 @@ def save():
     name_file = input("masukkan nama folder ")
     if not os.path.exists(name_file):
         os.mkdir(name_file)
-    file_user = open(name_file+"/user.txt", "w")
+    file_user = open(name_file+"/user.csv", "w")
     user = ""
     for i in range(main_data.user_len):
         temp = ""
@@ -18,7 +18,7 @@ def save():
     file_user.write(user)
     file_user.close()
 
-    file_candi = open(f"{name_file}/candi.txt", "w")
+    file_candi = open(f"{name_file}/candi.csv", "w")
     candi = ""
     for i in range(main_data.candi_len):
         temp = ""
@@ -30,7 +30,7 @@ def save():
     file_candi.write(candi)
     file_candi.close()
 
-    file_bahan_bangunan = open(f"{name_file}/bahan_bangunan.txt", "w")
+    file_bahan_bangunan = open(f"{name_file}/bahan_bangunan.csv", "w")
     bahan_bangunan = ""
     for i in range(4):
         temp = ""
