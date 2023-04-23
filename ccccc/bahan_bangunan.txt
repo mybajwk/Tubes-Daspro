@@ -1,4 +1,0 @@
-nama;deskripsi;jumlah
-pasir;deskripsi;jumlah
-batu;deskripsi;jumlah
-air;deskripsi;jumlah
