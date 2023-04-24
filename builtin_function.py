@@ -79,6 +79,18 @@ def csv_reader(data: list, delimiter: str) -> tuple[list, int]:
         length_data += 1
     return result, length_data
 
+def getIndexList(data: list, data_len: int, search: str) -> int:
+    for i in range(data_len):
+        if data[i] == search:
+            return i
+    return -1
+
+def loopSort(data: list, data_len: int) -> list:
+    for i in range(data_len):
+        for j in range(data_len-1):
+            if data[j] > data[j+1]:
+                data[j], data[j+1] = data[j+1], data[j]
+    return data
 
 def notvalid():
     print("invalid command")
