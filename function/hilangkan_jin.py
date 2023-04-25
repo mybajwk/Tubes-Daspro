@@ -5,7 +5,7 @@ import builtin_function
 def hilangkan_jin():
     delete_user = input("masukkan usernama jin: ")
     ditemukan = False
-    for i in range(1, main_data.user_len):
+    for i in range(2, main_data.user_len):
         if main_data.data_csv_user[i][0] == delete_user:
             ditemukan = True
             confirm = input(

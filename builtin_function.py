@@ -10,7 +10,7 @@ def len_data(data: str) -> int:
 
 
 # push back data untuk string
-def push_back_data(old_data: list, new_data: str, idx: int) -> list:
+def push_back_data(old_data: list, new_data: any, idx: int) -> list:
     # pengganti append
     idx += 1
     data_result = [None for k in range(idx)]
@@ -24,11 +24,12 @@ def push_back_data(old_data: list, new_data: str, idx: int) -> list:
 
 
 def hapus_data_list(old_data: list, delete_data: str, len: int) -> tuple[list, int]:
-    # pengganti append
-    data_result = [None for k in range(len-1)]
+    data_result = [None for k in range(len)]
     for i in range(len):
         if not (old_data[i][0] == delete_data):
             data_result[i] = old_data[i]
+        else:
+            data_result[i] = None
 
     return data_result, len-1
 
@@ -36,7 +37,7 @@ def hapus_data_list(old_data: list, delete_data: str, len: int) -> tuple[list, i
 # push back data untuk list
 
 
-def push_back_data_list(old_data: list, new_data: str, len: int) -> tuple[list, int]:
+def push_back_data_list(old_data: list, new_data: list, len: int) -> tuple[list, int]:
     # pengganti append
     len += 1
     data_result = [None for k in range(len)]

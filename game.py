@@ -30,7 +30,11 @@ def game():
                 'Anda telah login dengan username {}, silahkan lakukan "logout" sebelum melakukan login kembali'.format(main_data.current_user))
         elif x == "Summon Jin":
             if (current_role == "bandung_bondowoso"):
-                summon_jin()
+                if main_data.user_len <= 102:
+                    summon_jin()
+                else:
+                    print(
+                        "Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
             else:
                 unauthorized()
         elif x == "Hilangkan Jin":

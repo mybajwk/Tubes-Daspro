@@ -1,5 +1,13 @@
+import main_data
+import random
+
 
 def jin_kumpul():
-    print()
+    pasir = random.randint(1, 5)
+    batu = random.randint(1, 5)
+    air = random.randint(1, 5)
 
-    # buat program disini hapus aja printnya
+    main_data.data_csv_bahan[1][2] = int(
+        main_data.data_csv_bahan[1][2]) + pasir
+    main_data.data_csv_bahan[2][2] = int(main_data.data_csv_bahan[2][2]) + batu
+    main_data.data_csv_bahan[3][2] = int(main_data.data_csv_bahan[3][2]) + air
