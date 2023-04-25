@@ -46,5 +46,6 @@ while not (main_data.stop_program):
         else:
             notvalid()
 
-    if (main_data.is_login):
-        game()
+    while (main_data.is_login):
+        comand = input("masukkan input ")
+        game(comand)

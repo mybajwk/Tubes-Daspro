@@ -1,11 +1,12 @@
 import main_data
 import os
+from builtin_function import insertion_sort
 
 
 def save():
     name_file = input("masukkan nama folder ")
     if not os.path.exists(name_file):
-        os.mkdir(name_file)
+        os.makedirs(name_file)
     file_user = open(name_file+"/user.csv", "w")
     user = ""
     for i in range(main_data.user_len):
@@ -18,6 +19,10 @@ def save():
     file_user.write(user)
     file_user.close()
 
+    # sorting id candi dulu
+    main_data.data_csv_candi = insertion_sort(
+        main_data.data_csv_candi, main_data.candi_len)
+
     file_candi = open(f"{name_file}/candi.csv", "w")
     candi = ""
     for i in range(main_data.candi_len):
@@ -25,7 +30,7 @@ def save():
         for j in range(4):
             temp += str(main_data.data_csv_candi[i][j])
             temp += ";"
-        temp = str(temp + main_data.data_csv_candi[i][4]) + "\n"
+        temp = str(temp + str(main_data.data_csv_candi[i][4])) + "\n"
         candi += temp
     file_candi.write(candi)
     file_candi.close()

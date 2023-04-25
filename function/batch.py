@@ -1,15 +1,17 @@
 import main_data
 import random
 import builtin_function
+from builtin_function import insertion_sort
 
 
 def get_id(data: list, len: int) -> int:
-    id = 0
-    for i in range(0, len):
-        if (data[i] == None):
-            id = i
-    if id == 0:
-        id = len+1
+    id = 1
+    while (id < len):
+        if (int(data[id][0]) > id):
+            break
+        id += 1
+
+    print(id)
     return id
 
 
@@ -19,7 +21,7 @@ def batch_bangun():
     for i in range(2, main_data.user_len):
         if (main_data.data_csv_user[i][2] == "jin_pembangun"):
             data_jin, jin = builtin_function.push_back_data_list(
-                data_jin, main_data[i], jin)
+                data_jin, main_data.data_csv_user[i], jin)
     if (jin > 0):
         data_bahan = []
         total_pasir = 0
@@ -39,14 +41,25 @@ def batch_bangun():
               total_pasir, " pasir,", total_batu, " batu, dan", total_air, " air.")
         if int(main_data.data_csv_bahan[1][2]) >= pasir and int(main_data.data_csv_bahan[2][2]) >= batu and int(main_data.data_csv_bahan[3][2]) >= air:
             candi_terbangun = 0
+
+            main_data.data_csv_bahan[1][2] = int(
+                main_data.data_csv_bahan[1][2]) - total_pasir
+            main_data.data_csv_bahan[2][2] = int(
+                main_data.data_csv_bahan[2][2]) - total_batu
+            main_data.data_csv_bahan[3][2] = int(
+                main_data.data_csv_bahan[3][2]) - total_air
             for i in range(jin):
                 if (main_data.candi_len < 100):
-                    id = get_id(main_data.data_csv_candi, main_data.candi_len)
+                    main_data.data_csv_candi = insertion_sort(
+                        main_data.data_csv_candi, main_data.candi_len)
+                    id = get_id(main_data.data_csv_candi,
+                                int(main_data.candi_len))
                     add_candi = [id, data_jin[i][0], data_bahan[i]
                                  [0], data_bahan[i][1], data_bahan[i][2]]
 
                     main_data.data_csv_candi, main_data.candi_len = builtin_function.push_back_data_list(
                         main_data.data_csv_candi, add_candi, main_data.candi_len)
+
                 candi_terbangun += 1
             print("Jin berhasil membangun total", candi_terbangun, " candi.")
 
@@ -54,6 +67,13 @@ def batch_bangun():
             pasir_kurang = total_pasir-int(main_data.data_csv_bahan[1][2])
             batu_kurang = total_batu-int(main_data.data_csv_bahan[2][2])
             air_kurang = total_air-int(main_data.data_csv_bahan[3][2])
+            if (total_pasir < int(main_data.data_csv_bahan[1][2])):
+                pasir_kurang = 0
+            if (total_batu < int(main_data.data_csv_bahan[2][2])):
+                batu_kurang = 0
+            if (total_air < int(main_data.data_csv_bahan[3][2])):
+                air_kurang = 0
+
             print("Bangun gagal. Kurang", pasir_kurang, "pasir,",
                   batu_kurang, " batu, dan", air_kurang, " air.")
 
