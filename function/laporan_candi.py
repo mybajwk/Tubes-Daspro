@@ -1,8 +1,10 @@
-from main_data import candi_len, data_csv_candi
+# from main_data import candi_len, data_csv_candi
+import main_data
 
 
 def laporan_candi():
-    total = candi_len
+    print(main_data.data_csv_candi)
+    total = main_data.candi_len-1
     pasir = 0
     batu = 0
     air = 0
@@ -10,14 +12,17 @@ def laporan_candi():
     idMin = 0
     max_harga = 0
     min_harga = 100000000
-    for i in range(candi_len):
-        pasir += data_csv_candi[i][2]
-        batu += data_csv_candi[i][3]
-        air += data_csv_candi[i][4]
-        temp = 10000 * pasir + 15000 * batu + 7500 * air
+    for i in range(1, main_data.candi_len):
+        pasir += int(main_data.data_csv_candi[i][2])
+        batu += int(main_data.data_csv_candi[i][3])
+        air += int(main_data.data_csv_candi[i][4])
+        temp = 10000 * int(main_data.data_csv_candi[i][2]) + 15000 * int(
+            main_data.data_csv_candi[i][3]) + 7500 * int(main_data.data_csv_candi[i][4])
         if max_harga < temp:
+            idMax = main_data.data_csv_candi[i][0]
             max_harga = temp
-        elif min_harga > temp:
+        if min_harga > temp:
+            idMin = main_data.data_csv_candi[i][0]
             min_harga = temp
 
     print("Total Candi:", total)

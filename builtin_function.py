@@ -104,7 +104,9 @@ def loopSort(data: list, data_len: int) -> list:
     for i in range(data_len):
         for j in range(data_len-1):
             if data[j] > data[j+1]:
-                data[j], data[j+1] = data[j+1], data[j]
+                temp = data[j+1]
+                data[j+1] = data[j]
+                data[j] = temp
     return data
 
 
