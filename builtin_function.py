@@ -95,7 +95,7 @@ def csv_reader(data: list, delimiter: str) -> tuple[list, int]:
 
 def getIndexList(data: list, data_len: int, search: str) -> int:
     for i in range(data_len):
-        if data[i] == search:
+        if data[i][0] == search:
             return i
     return -1
 
@@ -103,10 +103,15 @@ def getIndexList(data: list, data_len: int, search: str) -> int:
 def loopSort(data: list, data_len: int) -> list:
     for i in range(data_len):
         for j in range(data_len-1):
-            if data[j] > data[j+1]:
+            if data[j][1] < data[j+1][1]:
                 temp = data[j+1]
                 data[j+1] = data[j]
                 data[j] = temp
+            elif data[j][1] == data[j+1][1]:
+                if data[j][0] > data[j+1][0]:
+                    temp = data[j+1]
+                    data[j+1] = data[j]
+                    data[j] = temp
     return data
 
 
