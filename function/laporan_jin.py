@@ -30,6 +30,7 @@ def laporan_jin():
             total_jin += 1
             if main_data.data_csv_user[i][2] == "jin_pengumpul":
                 jin_pengumpul += 1
+
             elif main_data.data_csv_user[i][2] == "jin_pembangun":
                 jin_pembangun += 1
                 list_jin_pembuat_candi = push_back_data(
@@ -40,6 +41,11 @@ def laporan_jin():
         idx = getIndexList(list_jin_pembuat_candi,
                            len_list_jin_pembuat_candi, main_data.data_csv_candi[i][1])
         if idx != -1:
+            list_jin_pembuat_candi[idx][1] += 1
+        else:
+            list_jin_pembuat_candi = push_back_data(
+                list_jin_pembuat_candi, [main_data.data_csv_candi[i][1], 0], len_list_jin_pembuat_candi)
+            len_list_jin_pembuat_candi += 1
             list_jin_pembuat_candi[idx][1] += 1
 
     if jin_pembangun > 0:
