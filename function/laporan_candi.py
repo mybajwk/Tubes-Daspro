@@ -3,7 +3,7 @@ import main_data
 
 
 def laporan_candi():
-    print(main_data.data_csv_candi)
+    # print(main_data.data_csv_candi)
     total = main_data.candi_len-1
     pasir = 0
     batu = 0

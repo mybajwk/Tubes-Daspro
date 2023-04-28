@@ -37,7 +37,7 @@ while not (main_data.stop_program):
         elif comand == "Login":
             while not (main_data.is_login):
                 main_data.current_user, main_data.current_role, main_data.is_login = login()
-        elif comand == "exit":
+        elif comand == "Exit":
             exit()
         elif comand == "Logout":
             print("Logout gagal!")
@@ -47,5 +47,5 @@ while not (main_data.stop_program):
             notvalid()
 
     while (main_data.is_login):
-        comand = input("masukkan input ")
+        comand = input(">>> ")
         game(comand)
