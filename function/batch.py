@@ -1,7 +1,6 @@
 import main_data
-import random
 import builtin_function
-from builtin_function import insertion_sort
+from builtin_function import insertion_sort, random_generator
 
 
 def get_id(data: list, len: int) -> int:
@@ -29,9 +28,9 @@ def batch_bangun():
         total_air = 0
         # kumpulkan bahan
         for i in range(jin):
-            pasir = random.randint(1, 5)
-            batu = random.randint(1, 5)
-            air = random.randint(1, 5)
+            pasir = random_generator(1, 5)
+            batu = random_generator(1, 5)
+            air = random_generator(1, 5)
             total_pasir += pasir
             total_batu += batu
             total_air += air
@@ -93,9 +92,9 @@ def batch_kumpul():
         air = 0
         print("mengerahkan", jin, " untuk mengumpulkan bahan.")
         for i in range(jin):
-            pasir += random.randint(0, 5)
-            batu += random.randint(0, 5)
-            air += random.randint(0, 5)
+            pasir += random_generator(0, 5)
+            batu += random_generator(0, 5)
+            air += random_generator(0, 5)
         main_data.data_csv_bahan[1][2] = int(
             main_data.data_csv_bahan[1][2]) + pasir
         main_data.data_csv_bahan[2][2] = int(

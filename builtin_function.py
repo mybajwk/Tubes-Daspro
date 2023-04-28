@@ -1,4 +1,5 @@
 import main_data
+import time
 
 
 def len_data(data: str) -> int:
@@ -121,3 +122,18 @@ def notvalid():
 
 def unauthorized():
     print("unauthorized command")
+
+
+def random_generator(start: int, end: int) -> int:
+    seed = int(time.time())
+    a = 567125673
+    c = 1
+    m = end
+    condition = True
+    while condition:
+        time.sleep(float((seed % 10)/10))
+        seed += int(time.time())
+        LCG = ((a*seed)+c) % m
+        seed = seed + 1
+        if LCG >= start and LCG <= end:
+            return LCG

@@ -1,11 +1,11 @@
 import main_data
-import random
+from builtin_function import random_generator
 
 
 def jin_kumpul():
-    pasir = random.randint(1, 5)
-    batu = random.randint(1, 5)
-    air = random.randint(1, 5)
+    pasir = random_generator(0, 5)
+    batu = random_generator(0, 5)
+    air = random_generator(0, 5)
     print("Jin menemukan total",  pasir, " pasir,",
           batu, " batu, dan", air, " air.")
     main_data.data_csv_bahan[1][2] = int(

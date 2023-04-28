@@ -1,6 +1,6 @@
-import random
 import main_data
 import builtin_function
+from builtin_function import random_generator
 
 
 def get_id(data: list, len: int) -> int:
@@ -15,9 +15,9 @@ def get_id(data: list, len: int) -> int:
 
 
 def jin_bangun():
-    pasir = random.randint(1, 5)
-    batu = random.randint(1, 5)
-    air = random.randint(1, 5)
+    pasir = random_generator(1, 5)
+    batu = random_generator(1, 5)
+    air = random_generator(1, 5)
 
     if int(main_data.data_csv_bahan[1][2]) >= pasir and int(main_data.data_csv_bahan[2][2]) >= batu and int(main_data.data_csv_bahan[3][2]) >= air:
         print("Candi berhasil dibangun")
