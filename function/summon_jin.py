@@ -40,12 +40,15 @@ def summon_jin():
     print("Membacakan mantra...\n")
 
     # insert data to variabel
-    main_data.user_data[0] = username
-    main_data.user_data[1] = password
-    main_data.user_data[2] = role
 
+    user_data = [None for k in range(3)]
+    user_data[0] = username
+    user_data[1] = password
+    user_data[2] = role
+    old_data = main_data.data_csv_user
     # insert to array
     main_data.data_csv_user, main_data.user_len = builtin_function.push_back_data_list(
-        main_data.data_csv_user, main_data.user_data, main_data.user_len)
+        old_data, user_data, main_data.user_len)
+    print(main_data.data_csv_user, main_data.user_len)
 
     print("Jin {} berhasil dipanggil!".format(username))
