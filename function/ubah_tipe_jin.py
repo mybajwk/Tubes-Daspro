@@ -27,7 +27,6 @@ def ubah_tipe_jin():
 
             if choice == 'Y':
                 main_data.data_csv_user[idx][2] = change_to
-                print(main_data.data_csv_user)
                 print("Jin telah berhasil diubah.")
             elif choice == "N":
                 print("Jin tidak jadi diubah")
