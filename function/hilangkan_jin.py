@@ -10,13 +10,13 @@ def hilangkan_jin():
             ditemukan = True
             confirm = input(
                 "Apakah anda yakin ingin menghapus jin dengan username Jin1 (Y/N)? ")
-            if confirm == "Y":
+            if confirm == "Y" or confirm == "y":
                 for j in range(main_data.candi_len):
                     if main_data.data_csv_candi[j][1] == delete_user:
                         main_data.data_csv_candi, main_data.candi_len = builtin_function.hapus_data_list(
                             main_data.data_csv_candi, delete_user, main_data.candi_len, 1)
                 main_data.data_csv_user[i] = ""
                 main_data.user_len -= 1
+                print("Jin berhasil dihapus dari alam gaib")
     if not ditemukan:
         print("Tidak ada jin dengan username tersebut.")
-    print(main_data.data_csv_user)

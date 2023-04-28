@@ -25,10 +25,10 @@ def ubah_tipe_jin():
                 choice = input(
                     'Jin ini bertipe "Pembangun". Yakin ingin mengubah ke tipe "pengumpul" (Y/N)')
 
-            if choice == 'Y':
+            if choice == 'Y' or choice == "y":
                 main_data.data_csv_user[idx][2] = change_to
                 print("Jin telah berhasil diubah.")
-            elif choice == "N":
+            elif choice == "N" or choice == "n":
                 print("Jin tidak jadi diubah")
             else:
                 print("opsi salah")

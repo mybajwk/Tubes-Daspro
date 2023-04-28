@@ -15,7 +15,7 @@ def hancurkan_candi():
     if is_candi_ada == True:
         konfirmasi = input(
             f"Apakah anda yakin ingin menghancurkan candi ID: {id_candi} (Y/N)? ")
-        if konfirmasi == 'Y':
+        if konfirmasi == 'Y' or konfirmasi == "y":
             main_data.data_csv_candi, main_data.candi_len = builtin_function.hapus_data_list(
                 main_data.data_csv_candi, id_candi, main_data.candi_len, 0)
 
