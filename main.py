@@ -30,7 +30,7 @@ else:
 
 # main program
 while not (main_data.stop_program):
-    comand = input("masukkan input ")
+    comand = input(">>> ")
     if not (main_data.is_login):
         if comand == "HELP":
             command_help(main_data.current_role)
