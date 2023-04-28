@@ -1,14 +1,58 @@
 def command_help(role):
-    match role:
-        case "bandung_bondowoso":
-            print("bagian bandung bondowoso")
-        case "roro_jonggrang":
-            print("bagian roro")
-        case "jin_pembangun":
-            print("bagian jin pembangun")
-        case "jin_pengumpul":
-            print("bagian jin pengumpul")
-        case _:
-            print("login untuk masuk")
-            print("load untuk membaca data")
-            print("exit")
+    if role == "bandung_bondowoso":
+        print("1. Summon Jin")
+        print("   Untuk mensummon jin")
+        print("2. Ubah Tipe Jin")
+        print("   Untuk mengubah tipe jin")
+        print("3. Batch Bangun")
+        print("   Untuk melakukan Batch Bangun")
+        print("4. Batch Kumpul")
+        print("   Untuk melakukan Batch Bangun")
+        print("5. Ambil Laporan Jin")
+        print("   Untuk mencetak laporan jin")
+        print("6. Ambil Laporan Candi")
+        print("   Untuk mencetak laporan candi")
+        print("7. Save")
+        print("   Untuk menyimpan data dalam folder")
+        print("8. Logout")
+        print("   Untuk keluar dari akun yang digunakan sekarang")
+        print("9. Exit")
+        print("   Untuk keluar dari program dan kembali ke terminal")
+
+    elif role == "roro_jonggrang":
+        print("1. Hancurkan Candi")
+        print("   Untuk menghancurkan candi yang tersedia")
+        print("2. Ayam Berkokok")
+        print("   Untuk membangunkan ayam dan mengakhiri waktu Bandung Bondowoso untuk membangun candi")
+        print("3. Save")
+        print("   Untuk menyimpan data dalam folder")
+        print("4. Logout")
+        print("   Untuk keluar dari akun yang digunakan sekarang")
+        print("5. Exit")
+        print("   Untuk keluar dari program dan kembali ke terminal")
+
+    elif role == "jin_pembangun":
+        print("1. Bangun")
+        print("   Untuk membangun candi")
+        print("2. Save")
+        print("   Untuk menyimpan data dalam folder")
+        print("3. Logout")
+        print("   Untuk keluar dari akun yang digunakan sekarang")
+        print("4. Exit")
+        print("   Untuk keluar dari program dan kembali ke terminal")
+
+    elif role == "jin_pengumpul":
+        print("1. Kumpul")
+        print("   Untuk mengumpulkan resource candi")
+        print("2. Save")
+        print("   Untuk menyimpan data dalam folder")
+        print("3. Logout")
+        print("   Untuk keluar dari akun yang digunakan sekarang")
+        print("4. Exit")
+        print("   Untuk keluar dari program dan kembali ke terminal")
+
+    else:
+        print("1. Login")
+        print("   Untuk masuk menggunakan akun")
+        print("2. Exit")
+        print("   Untuk keluar dari program dan kembali ke terminal")

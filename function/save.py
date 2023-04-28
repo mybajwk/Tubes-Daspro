@@ -5,8 +5,10 @@ from builtin_function import insertion_sort
 
 def save():
     name_file = input("masukkan nama folder ")
+    print("Saving...")
     if not os.path.exists(name_file):
         os.makedirs(name_file)
+        print(f"Membuat folder {name_file}...")
     file_user = open(name_file+"/user.csv", "w")
     user = ""
     for i in range(main_data.user_len):
@@ -46,3 +48,4 @@ def save():
         bahan_bangunan += temp
     file_bahan_bangunan.write(bahan_bangunan)
     file_bahan_bangunan.close()
+    print(f"Berhasil menyimpan data di folder {name_file}!")

@@ -31,15 +31,16 @@ else:
 # main program
 while not (main_data.stop_program):
     comand = input(">>> ")
+    comand = comand.lower()
     if not (main_data.is_login):
-        if comand == "HELP":
+        if comand == "help":
             command_help(main_data.current_role)
-        elif comand == "Login":
+        elif comand == "login":
             while not (main_data.is_login):
                 main_data.current_user, main_data.current_role, main_data.is_login = login()
-        elif comand == "Exit":
+        elif comand == "exit":
             exit()
-        elif comand == "Logout":
+        elif comand == "logout":
             print("Logout gagal!")
             print(
                 "Anda belum login, silahkan login terlebih dahulu sebelum melakukan logout")
@@ -48,4 +49,5 @@ while not (main_data.stop_program):
 
     while (main_data.is_login):
         comand = input(">>> ")
+        comand = comand.lower()
         game(comand)

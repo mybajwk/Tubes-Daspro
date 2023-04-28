@@ -20,13 +20,13 @@ from function.ubah_tipe_jin import ubah_tipe_jin
 
 def game(x):
     current_role = main_data.current_role
-    if x == "HELP":
+    if x == "help":
         command_help(current_role)
-    elif x == "Login":
+    elif x == "login":
         print("Login gagal!")
         print(
             'Anda telah login dengan username {}, silahkan lakukan "logout" sebelum melakukan login kembali'.format(main_data.current_user))
-    elif x == "Summon Jin":
+    elif x == "summon jin" or x == "summonjin":
         if (current_role == "bandung_bondowoso"):
             if main_data.user_len <= 102:
                 summon_jin()
@@ -35,59 +35,59 @@ def game(x):
                     "Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
         else:
             unauthorized()
-    elif x == "Hilangkan Jin":
+    elif x == "hilangkan jin" or x == "hilangkanjin":
         if (current_role == "bandung_bondowoso"):
             hilangkan_jin()
         else:
             unauthorized()
-    elif x == "Ubah Tipe Jin":
+    elif x == "ubah tipe jin" or x == "ubahtipejin":
         if (current_role == "bandung_bondowoso"):
             ubah_tipe_jin()
         else:
             unauthorized()
-    elif x == "Bangun":
+    elif x == "bangun" or x == "jinbangun":
         if (current_role == "jin_pembangun"):
             jin_bangun()
         else:
             unauthorized()
-    elif x == "Kumpul":
+    elif x == "kumpul" or x == "jinkumpul":
         if (current_role == "jin_pengumpul"):
             jin_kumpul()
         else:
             unauthorized()
-    elif x == "Batch Kumpul":
+    elif x == "batch kumpul" or x == "batchkumpul":
         if (current_role == "bandung_bondowoso"):
             batch_kumpul()
         else:
             unauthorized()
-    elif x == "Batch Bangun":
+    elif x == "batch bangun" or x == "batchbangun":
         if (current_role == "bandung_bondowoso"):
             batch_bangun()
         else:
             unauthorized()
-    elif x == "Laporan Jin":
+    elif x == "laporan jin" or x == " laporanjin":
         if (current_role == "bandung_bondowoso"):
             laporan_jin()
         else:
             unauthorized()
-    elif x == "Laporan Candi":
+    elif x == "laporan candi" or x == "laporancandi":
         if (current_role == "bandung_bondowoso"):
             laporan_candi()
         else:
             unauthorized()
-    elif x == "Hancurkan Candi":
+    elif x == "hancurkan candi" or x == "hancurkancandi":
         if (current_role == "roro_jonggrang"):
             hancurkan_candi()
         else:
             unauthorized()
-    elif x == "Ayam Berkokok":
+    elif x == "ayam berkokok" or x == "ayamberkokok":
         if (current_role == "roro_jonggrang"):
             ayam_berkokok()
         else:
             unauthorized()
-    elif x == "Save":
+    elif x == "save":
         save()
-    elif x == "Exit":
+    elif x == "exit":
         exit()
     elif x == "logout":
         main_data.current_role = None
