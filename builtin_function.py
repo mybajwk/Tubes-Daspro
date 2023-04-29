@@ -120,8 +120,8 @@ def notvalid():
     print("invalid command")
 
 
-def unauthorized():
-    print("unauthorized command")
+def unauthorized(role):
+    print(f"{role} tidak memiliki akses pada command ini.")
 
 
 def random_generator(start: int, end: int) -> int:

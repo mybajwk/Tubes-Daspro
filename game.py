@@ -35,57 +35,57 @@ def game(x):
                 print(
                     "Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "hilangkan jin" or x == "hilangkanjin":
         if (current_role == "bandung_bondowoso"):
             hilangkan_jin()
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "ubah tipe jin" or x == "ubahtipejin":
         if (current_role == "bandung_bondowoso"):
             ubah_tipe_jin()
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "bangun" or x == "jinbangun":
         if (current_role == "jin_pembangun"):
             jin_bangun()
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "kumpul" or x == "jinkumpul":
         if (current_role == "jin_pengumpul"):
             jin_kumpul()
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "batch kumpul" or x == "batchkumpul":
         if (current_role == "bandung_bondowoso"):
             batch_kumpul()
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "batch bangun" or x == "batchbangun":
         if (current_role == "bandung_bondowoso"):
             batch_bangun()
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "laporan jin" or x == " laporanjin":
         if (current_role == "bandung_bondowoso"):
             laporan_jin()
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "laporan candi" or x == "laporancandi":
         if (current_role == "bandung_bondowoso"):
             laporan_candi()
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "hancurkan candi" or x == "hancurkancandi":
         if (current_role == "roro_jonggrang"):
             hancurkan_candi()
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "ayam berkokok" or x == "ayamberkokok":
         if (current_role == "roro_jonggrang"):
             ayam_berkokok()
         else:
-            unauthorized()
+            unauthorized(current_role)
     elif x == "save":
         save()
     elif x == "exit":

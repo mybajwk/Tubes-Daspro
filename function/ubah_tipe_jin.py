@@ -4,7 +4,7 @@ import main_data
 def ubah_tipe_jin():
     valid = False
     while not valid:
-        username = input("Masukkan username jin :")
+        username = input("Masukkan username jin: ")
         idx = 0
         for i in main_data.data_csv_user:
             if (username != i[0]):
@@ -16,7 +16,7 @@ def ubah_tipe_jin():
         else:
             choice = None
             change_to = None
-            if (main_data.user_data[2] == "jin_pengumpul"):
+            if (main_data.data_csv_user[idx][2] == "jin_pengumpul"):
                 change_to = "jin_pembangun"
                 choice = input(
                     'Jin ini bertipe "Pengumpul". Yakin ingin mengubah ke tipe "Pembangun" (Y/N)')
