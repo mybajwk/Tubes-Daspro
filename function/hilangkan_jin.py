@@ -9,7 +9,7 @@ def hilangkan_jin():
         if main_data.data_csv_user[i][0] == delete_user:
             ditemukan = True
             confirm = input(
-                "Apakah anda yakin ingin menghapus jin dengan username Jin1 (Y/N)? ")
+                f"Apakah anda yakin ingin menghapus jin dengan username {delete_user} (Y/N)? ")
             if confirm == "Y" or confirm == "y":
                 for j in range(main_data.candi_len):
                     if main_data.data_csv_candi[j][1] == delete_user:

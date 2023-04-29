@@ -20,7 +20,6 @@ def laporan_jin():
     list_jin_pembuat_candi = []
     len_list_jin_pembuat_candi = 0
     jin_pengumpul = 0
-    list_jumlah_candi = []
     pasir = 0
     air = 0
     batu = 0

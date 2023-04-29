@@ -34,7 +34,7 @@ def batch_bangun():
             total_pasir += pasir
             total_batu += batu
             total_air += air
-            data_bahan, temp = builtin_function.push_back_data_list(
+            data_bahan, _ = builtin_function.push_back_data_list(
                 data_bahan, [pasir, batu, air], i)
         print("Mengerahkan",  jin, " jin untuk membangun candi dengan total bahan",
               total_pasir, " pasir,", total_batu, " batu, dan", total_air, " air.")
