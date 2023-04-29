@@ -11,6 +11,7 @@ def len_data(data: str) -> int:
 
 
 def insertion_sort(arr, len):
+    # untuk sorting data
     for i in range(2, len):
         key = arr[i]
         j = i - 1
@@ -19,8 +20,6 @@ def insertion_sort(arr, len):
             j -= 1
         arr[j+1] = key
     return arr
-
-# push back data untuk string
 
 
 def push_back_data(old_data: list, new_data: any, idx: int) -> list:
@@ -33,10 +32,9 @@ def push_back_data(old_data: list, new_data: any, idx: int) -> list:
 
     return data_result
 
-# hapus data list
-
 
 def hapus_data_list(old_data: list, delete_data: str, len: int, posisi: int) -> tuple[list, int]:
+    # untuk mengahpus data dari suatu list
     data_result = [None for k in range(len-1)]
     idx = 0
     for i in range(len):
@@ -45,9 +43,6 @@ def hapus_data_list(old_data: list, delete_data: str, len: int, posisi: int) -> 
             idx += 1
 
     return data_result, len-1
-
-
-# push back data untuk list
 
 
 def push_back_data_list(old_data: list, new_data: list, len: int) -> tuple[list, int]:
@@ -71,6 +66,7 @@ def count_char(text, character):
 
 
 def csv_reader(data: list, delimiter: str) -> tuple[list, int]:
+    # untuk membaca data csv dan convert ke matriks atau array of array
     result = []
     length_data = 0
     for line in data:
@@ -95,6 +91,7 @@ def csv_reader(data: list, delimiter: str) -> tuple[list, int]:
 
 
 def getIndexList(data: list, data_len: int, search: str) -> int:
+    # mendapatkan index dari suatu data dan return -1 bila tidak dittremukan
     for i in range(data_len):
         if data[i][0] == search:
             return i
@@ -102,6 +99,7 @@ def getIndexList(data: list, data_len: int, search: str) -> int:
 
 
 def loopSort(data: list, data_len: int) -> list:
+    # sort untuk mengurutkan jumlah candi yang dibentuk dan dirutukan secara leksikografis
     for i in range(data_len):
         for j in range(data_len-1):
             if data[j][1] < data[j+1][1]:
@@ -125,6 +123,8 @@ def unauthorized(role):
 
 
 def random_generator(start: int, end: int) -> int:
+    # fitur bonus untuk random generate number dengan seed merupakan time di convert ke int dan di delay agar dapat seed yang berbeda beda
+    # bila dipanggil dalam waktu yang hampir bersamaan
     seed = int(time.time())
     a = 567125673
     c = 1

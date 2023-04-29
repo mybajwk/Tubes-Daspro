@@ -5,6 +5,7 @@ from builtin_function import csv_reader
 
 
 def read_file():
+    # untuk membaca file csv dengan memangil function csv reader
     print("load user.csv ....")
     file = open(main_data.folder+"/user.csv", 'r')
     main_data.data_csv_user, main_data.user_len = csv_reader(file, ";")

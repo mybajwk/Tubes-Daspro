@@ -4,6 +4,7 @@ from builtin_function import insertion_sort
 
 
 def save():
+    # melakukan saving user.csv
     name_file = input("masukkan nama folder ")
     print("Saving...")
     if not os.path.exists(name_file):
@@ -14,6 +15,7 @@ def save():
     for i in range(main_data.user_len):
         temp = ""
         for j in range(2):
+            # rubah semua data kedalam string yang dipisahkan oleh ";"
             temp += str(main_data.data_csv_user[i][j])
             temp += ";"
         temp = temp + str(main_data.data_csv_user[i][2]) + "\n"
@@ -21,6 +23,7 @@ def save():
     file_user.write(user)
     file_user.close()
 
+    # melakukan saving data candi
     # sorting id candi dulu
     main_data.data_csv_candi = insertion_sort(
         main_data.data_csv_candi, main_data.candi_len)
@@ -30,6 +33,7 @@ def save():
     for i in range(main_data.candi_len):
         temp = ""
         for j in range(4):
+            # rubah semua data kedalam string yang dipisahkan oleh ";"
             temp += str(main_data.data_csv_candi[i][j])
             temp += ";"
         temp = str(temp + str(main_data.data_csv_candi[i][4])) + "\n"
@@ -37,11 +41,13 @@ def save():
     file_candi.write(candi)
     file_candi.close()
 
+    # melakukan saving data bahan bangunan
     file_bahan_bangunan = open(f"{name_file}/bahan_bangunan.csv", "w")
     bahan_bangunan = ""
     for i in range(4):
         temp = ""
         for j in range(2):
+            # rubah semua data kedalam string yang dipisahkan oleh ";"
             temp += str(main_data.data_csv_bahan[i][j])
             temp += ";"
         temp = temp + str(main_data.data_csv_bahan[i][2]) + "\n"

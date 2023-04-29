@@ -3,15 +3,16 @@ from builtin_function import push_back_data, push_back_data_list, getIndexList, 
 import main_data
 
 
-def getJinfromJumlahCandi(data: list, data_len: int, value: int) -> tuple[list, int]:
-    jinListlen = 0
-    jinList = []
-    for i in range(data_len):
-        if data[i] == value:
-            jinList = push_back_data(
-                jinList, data[i], jinListlen)
-            jinListlen += 1
-    return jinList, jinListlen
+# def getJinfromJumlahCandi(data: list, data_len: int, value: int) -> tuple[list, int]:
+#     #
+#     jinListlen = 0
+#     jinList = []
+#     for i in range(data_len):
+#         if data[i] == value:
+#             jinList = push_back_data(
+#                 jinList, data[i], jinListlen)
+#             jinListlen += 1
+#     return jinList, jinListlen
 
 
 def laporan_jin():
@@ -32,22 +33,26 @@ def laporan_jin():
 
             elif main_data.data_csv_user[i][2] == "jin_pembangun":
                 jin_pembangun += 1
+                # masukkan semua jin pembangun kedalam suatu array
                 list_jin_pembuat_candi = push_back_data(
                     list_jin_pembuat_candi, [main_data.data_csv_user[i][0], 0], len_list_jin_pembuat_candi)
                 len_list_jin_pembuat_candi += 1
 
+    # pendataan setiap jin membangun berapa candi
     for i in range(1, main_data.candi_len):
         idx = getIndexList(list_jin_pembuat_candi,
                            len_list_jin_pembuat_candi, main_data.data_csv_candi[i][1])
         if idx != -1:
             list_jin_pembuat_candi[idx][1] += 1
         else:
+            # handel jika dalam list candi ada pembuat yang merupakan jin pembangun yang udah dirubah ke jin pengumpul
             list_jin_pembuat_candi = push_back_data(
                 list_jin_pembuat_candi, [main_data.data_csv_candi[i][1], 0], len_list_jin_pembuat_candi)
             len_list_jin_pembuat_candi += 1
             list_jin_pembuat_candi[idx][1] += 1
 
     if jin_pembangun > 0:
+        # urutkan data berdasar jumlah candi dan leksikografis nama
         sort_data = loopSort(list_jin_pembuat_candi,
                              len_list_jin_pembuat_candi)
         jin_terrajin = sort_data[0][0]
@@ -57,6 +62,7 @@ def laporan_jin():
         jin_terrajin = "-"
         jin_termalas = "-"
 
+    # mendata material yang ada saat ini
     for i in range(int(main_data.bahan_len)):
         if main_data.data_csv_bahan[i][0] == "pasir":
             pasir += int(main_data.data_csv_bahan[i][2])

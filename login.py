@@ -2,6 +2,7 @@ import main_data
 
 
 def login():
+    # melakukan login dan memberi return username, role, dan status is login
     data_user = main_data.data_csv_user
     username = input("masukkan username ")
     password = input("masukkan password ")
@@ -14,7 +15,7 @@ def login():
                 return username, data_user[i][2], True
             else:
                 print("password salah")
-                return None, None, False
+                return "", "", False
 
     print("username salah")
-    return None, None, False
+    return "", "", False

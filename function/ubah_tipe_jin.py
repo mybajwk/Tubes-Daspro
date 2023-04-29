@@ -3,9 +3,12 @@ import main_data
 
 def ubah_tipe_jin():
     valid = False
-    while not valid:
+    idx = 0
+    while not valid and idx < 3:
+        # menerima masukan username jin dan akan terus looping maksimal 3 kali untuk handel apabila blm ada jin sama sekali
         username = input("Masukkan username jin: ")
         idx = 0
+        # ceusername jin ada ataua tidak
         for i in main_data.data_csv_user:
             if (username != i[0]):
                 idx += 1
@@ -24,7 +27,7 @@ def ubah_tipe_jin():
                 change_to = "jin_pengumpul"
                 choice = input(
                     'Jin ini bertipe "Pembangun". Yakin ingin mengubah ke tipe "pengumpul" (Y/N)')
-
+            # ubah data jin
             if choice == 'Y' or choice == "y":
                 main_data.data_csv_user[idx][2] = change_to
                 print("Jin telah berhasil diubah.")
@@ -32,3 +35,4 @@ def ubah_tipe_jin():
                 print("Jin tidak jadi diubah")
             else:
                 print("opsi salah")
+    idx += 1

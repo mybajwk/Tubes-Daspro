@@ -1,4 +1,5 @@
-def command_help(role):
+def command_help(role: str):
+    # mengeluarkan data help sesuai dengan rolenya
     print("========================= HELP =========================")
     if role == "bandung_bondowoso":
         print("1. Summon Jin")
