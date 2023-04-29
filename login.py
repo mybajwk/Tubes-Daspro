@@ -12,7 +12,7 @@ def login():
                 if i[1] == password:
                     print("selamat datang", username)
                     print(
-                        "silahkan ketik `help` untuk daftar command yang dapat anda lakukan")
+                        'Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
                     return username, i[2], True
                 else:
                     print("password salah")
