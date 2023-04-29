@@ -10,7 +10,6 @@ def get_id(data: list, len: int) -> int:
             break
         id += 1
 
-    print(id)
     return id
 
 
@@ -36,8 +35,8 @@ def batch_bangun():
             total_air += air
             data_bahan, _ = builtin_function.push_back_data_list(
                 data_bahan, [pasir, batu, air], i)
-        print("Mengerahkan",  jin, " jin untuk membangun candi dengan total bahan",
-              total_pasir, " pasir,", total_batu, " batu, dan", total_air, " air.")
+        print("Mengerahkan",  jin, "jin untuk membangun candi dengan total bahan",
+              total_pasir, " pasir,", total_batu, "batu, dan", total_air, "air.")
         if int(main_data.data_csv_bahan[1][2]) >= pasir and int(main_data.data_csv_bahan[2][2]) >= batu and int(main_data.data_csv_bahan[3][2]) >= air:
             candi_terbangun = 0
 
