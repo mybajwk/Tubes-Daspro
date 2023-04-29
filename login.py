@@ -5,19 +5,16 @@ def login():
     data_user = main_data.data_csv_user
     username = input("masukkan username ")
     password = input("masukkan password ")
-    idx = 0  # for indexing
-    for i in data_user:
-        if idx != 0:
-            if i[0] == username:
-                if i[1] == password:
-                    print("selamat datang", username)
-                    print(
-                        'Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
-                    return username, i[2], True
-                else:
-                    print("password salah")
-                    return None, None, False
+    for i in range(main_data.user_len):
+        if data_user[i][0] == username:
+            if data_user[i][1] == password:
+                print("selamat datang", username)
+                print(
+                    'Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
+                return username, data_user[i][2], True
+            else:
+                print("password salah")
+                return None, None, False
 
-        idx += 1
     print("username salah")
     return None, None, False
