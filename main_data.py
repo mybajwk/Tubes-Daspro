@@ -1,8 +1,8 @@
 
 is_login = False
 stop_program = False
-current_user = None
-current_role = None
+current_user = ""
+current_role = ""
 # data from csv
 data_csv_user = None  # 1
 user_len = 0

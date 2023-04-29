@@ -1,4 +1,5 @@
 def command_help(role):
+    print("========================= HELP =========================")
     if role == "bandung_bondowoso":
         print("1. Summon Jin")
         print("   Untuk mensummon jin")

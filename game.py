@@ -13,6 +13,7 @@ from function.laporan_jin import laporan_jin
 from function.save import save
 from function.summon_jin import summon_jin
 from function.ubah_tipe_jin import ubah_tipe_jin
+from function.logout import logout
 
 
 # print(main_data.current_role, main_data.current_user)
@@ -90,8 +91,6 @@ def game(x):
     elif x == "exit":
         exit()
     elif x == "logout":
-        main_data.current_role = None
-        main_data.current_user = None
-        main_data.is_login = False
+        logout()
     else:
         notvalid()
