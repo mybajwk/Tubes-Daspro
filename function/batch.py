@@ -89,7 +89,7 @@ def batch_kumpul():
         pasir = 0
         batu = 0
         air = 0
-        print("mengerahkan", jin, " untuk mengumpulkan bahan.")
+        print("mengerahkan", jin, "jin untuk mengumpulkan bahan.")
         for i in range(jin):
             pasir += random_generator(0, 5)
             batu += random_generator(0, 5)
