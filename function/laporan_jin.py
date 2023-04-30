@@ -2,19 +2,6 @@
 from builtin_function import push_back_data, push_back_data_list, getIndexList, loopSort
 import main_data
 
-
-# def getJinfromJumlahCandi(data: list, data_len: int, value: int) -> tuple[list, int]:
-#     #
-#     jinListlen = 0
-#     jinList = []
-#     for i in range(data_len):
-#         if data[i] == value:
-#             jinList = push_back_data(
-#                 jinList, data[i], jinListlen)
-#             jinListlen += 1
-#     return jinList, jinListlen
-
-
 def laporan_jin():
     total_jin = 0
     jin_pembangun = 0
