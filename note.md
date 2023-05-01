@@ -1,6 +1,3 @@
-hal yang mau ditanyakan di asistensi
-exit yang bisa sipa saja
-
 main_data letak seluruh data jadi kalau butuh akses data candi bahan bangunan jin dll itu ada di access data
 nanti cara mau update data utama itu
 
